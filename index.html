@@ -3,140 +3,136 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#111827">
-  <meta name="description" content="Archwise Ltd. — a media and publishing identity with a taste for hard edges, sharp language, and work that holds up.">
+  <meta name="theme-color" content="#1C1A17">
+  <meta name="description" content="Archwise Ltd. — media, publishing, dark stories, and distinct voices. No filler. No apologies.">
   <title>Archwise Ltd. | No filler. No apologies.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      /* Archwise design-tokens.json: semantic defaults and primitive accents */
-      --blue:#3B82F6;--blue-hover:#2563EB;--green:#10B981;--amber:#F59E0B;
-      --ink:#111827;--muted:#6B7280;--white:#FFFFFF;--subtle:#F9FAFB;
-      --border:#E5E7EB;--focus:#3B82F6;--max:1280px;
+      /* The Clarke guide's unofficial heritage palette, adapted for Archwise. */
+      --black:#1C1A17;--gold:#B8912F;--dark-gold:#7A5A12;
+      --tin:#C9CCCF;--paper:#EDE6D6;--cream:#F7F2E8;
+      --line:rgba(28,26,23,.22);--serif:"Libre Baskerville",Georgia,serif;
+      --sans:Inter,system-ui,sans-serif;--max:1200px;
     }
     *,*::before,*::after{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;background:var(--white);color:var(--ink);font:400 16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-    a{color:inherit} a:focus-visible{outline:3px solid var(--focus);outline-offset:5px}
-    .wrap{width:min(calc(100% - 64px),var(--max));margin-inline:auto}
-    .skip{position:absolute;left:16px;top:-70px;background:var(--white);color:var(--ink);padding:8px 16px;z-index:1000}
-    .skip:focus{top:12px}
-    .topline{height:4px;background:linear-gradient(90deg,var(--blue) 0 56%,var(--green) 56% 80%,var(--amber) 80%)}
-    .site-header{background:var(--ink);color:var(--white);border-bottom:1px solid rgba(255,255,255,.16)}
-    .nav{min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-    .brand{text-decoration:none;font-size:21px;font-weight:900;letter-spacing:-.055em;line-height:1}
-    .brand .mark{display:inline-block;color:var(--blue);margin-right:11px;font:600 19px/1 "JetBrains Mono",monospace}
-    .brand .ltd{font-size:12px;letter-spacing:.04em;margin-left:7px;color:#9CA3AF;font-weight:600}
-    .nav-links{display:flex;gap:30px;align-items:center}
-    .nav-links a{text-decoration:none;font-size:13px;font-weight:700;color:#D1D5DB;transition:color 200ms}
-    .nav-links a:hover{color:var(--white)}
-    .nav-links .nav-cta{padding:10px 15px;color:var(--white);border:1px solid #4B5563}
-    .nav-links .nav-cta:hover{border-color:var(--blue)}
-    .hero{background:var(--ink);color:var(--white);position:relative;overflow:hidden}
-    .hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 83% 32%,rgba(59,130,246,.23),transparent 32%),linear-gradient(140deg,transparent 62%,rgba(16,185,129,.07) 100%)}
-    .hero::after{content:"";position:absolute;width:38vw;height:38vw;min-width:360px;min-height:360px;right:-13%;top:7%;border:1px solid rgba(59,130,246,.34);border-radius:50%;box-shadow:0 0 0 65px rgba(59,130,246,.045),0 0 0 130px rgba(59,130,246,.03);pointer-events:none}
-    .hero-inner{min-height:610px;padding:94px 0 88px;display:grid;grid-template-columns:minmax(0,1fr) 220px;align-items:end;gap:48px;position:relative;z-index:1}
-    .eyebrow{display:flex;align-items:center;gap:12px;margin:0 0 28px;color:#93C5FD;font:600 11px/1.5 "JetBrains Mono",monospace;letter-spacing:.13em;text-transform:uppercase}
-    .eyebrow::before{content:"";height:2px;width:27px;background:var(--amber)}
+    body{margin:0;background:var(--paper);color:var(--black);font:400 16px/1.7 var(--sans)}
+    a{color:inherit}
+    a:focus-visible{outline:3px solid var(--gold);outline-offset:5px}
+    .wrap{width:min(calc(100% - 64px),var(--max));margin:auto}
+    .skip{position:absolute;top:-80px;left:16px;background:var(--paper);padding:10px 18px;z-index:10}
+    .skip:focus{top:16px}
+    .top-rule{height:5px;background:var(--gold)}
+    .masthead{background:var(--black);color:var(--paper);border-bottom:1px solid rgba(237,230,214,.25)}
+    .masthead-inner{min-height:100px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .wordmark{text-decoration:none;font:700 clamp(19px,2.8vw,31px)/1.2 var(--serif);letter-spacing:-.05em}
+    .wordmark small{display:block;margin-top:8px;color:var(--gold);font:600 9px/1.3 var(--sans);letter-spacing:.26em;text-transform:uppercase}
+    .nav{display:flex;gap:32px;align-items:center}
+    .nav a{font-size:12px;font-weight:700;text-decoration:none;text-transform:uppercase;letter-spacing:.13em}
+    .nav a:hover{color:var(--gold)}
+    .masthead-line{border-top:1px solid rgba(237,230,214,.2);padding:9px 0}
+    .masthead-line .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--tin);font:500 10px/1.4 var(--sans);letter-spacing:.15em;text-transform:uppercase}
+    .hero{background:var(--black);color:var(--paper);overflow:hidden;position:relative}
+    .hero::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.42;background:repeating-linear-gradient(0deg,transparent 0 35px,rgba(184,145,47,.075) 36px,transparent 37px),radial-gradient(ellipse at 75% 43%,rgba(184,145,47,.18),transparent 50%)}
+    .hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(260px,.7fr);min-height:650px;align-items:center;gap:75px;padding:110px 0}
+    .overline{display:flex;align-items:center;gap:14px;margin:0 0 28px;color:var(--gold);font:700 11px/1.5 var(--sans);letter-spacing:.21em;text-transform:uppercase}
+    .overline::before{content:"";height:1px;width:34px;background:var(--gold)}
     h1,h2,h3,p{margin-top:0}
-    h1{max-width:1050px;margin-bottom:27px;font-size:clamp(56px,8.6vw,118px);line-height:.99;letter-spacing:-.075em;font-weight:900}
-    h1 .stroke{color:transparent;-webkit-text-stroke:1.5px #93C5FD}
-    .hero-copy{max-width:610px;margin-bottom:0;color:#D1D5DB;font-size:clamp(17px,2vw,20px);line-height:1.7}
-    .hero-aside{border-left:2px solid var(--green);padding:0 0 0 18px;color:#CBD5E1;font-size:13px;line-height:1.7}
-    .hero-aside strong{display:block;color:var(--white);font-size:12px;letter-spacing:.07em;text-transform:uppercase;margin-bottom:8px}
-    .ticker{background:var(--blue);color:var(--white)}
-    .ticker-inner{display:flex;flex-wrap:wrap;gap:12px 32px;align-items:center;justify-content:space-between;padding:17px 0;font:600 12px/1.5 "JetBrains Mono",monospace;letter-spacing:.06em;text-transform:uppercase}
-    .ticker .dot{color:#BFDBFE;margin:0 5px}
-    .intro{padding:100px 0 108px;background:var(--white)}
-    .intro-grid{display:grid;grid-template-columns: minmax(190px, 1fr) minmax(0, 2fr);gap:70px;align-items:start}
-    .section-label{margin:0;color:var(--blue-hover);font:600 12px/1.5 "JetBrains Mono",monospace;letter-spacing:.1em;text-transform:uppercase}
-    h2{font-size:clamp(36px,5vw,68px);line-height:1.12;letter-spacing:-.055em;font-weight:800;margin:0 0 26px}
-    .intro p:not(.section-label){font-size:18px;line-height:1.8;max-width:690px}
-    .intro .subtext{color:var(--muted)}
-    .principles{background:var(--subtle);padding:88px 0 100px;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-    .section-head{display:flex;align-items:end;justify-content:space-between;gap:36px;margin-bottom:38px}
+    h1,h2,h3{font-family:var(--serif)}
+    h1{font-size:clamp(51px,6.8vw,99px);line-height:1.14;letter-spacing:-.065em;margin-bottom:32px;font-weight:700;max-width:850px}
+    h1 em{color:var(--gold);font-weight:400}
+    .hero-copy{color:#D8D1C3;font-size:clamp(16px,1.7vw,19px);line-height:1.85;max-width:610px;margin:0}
+    .seal{width:min(100%,340px);aspect-ratio:1;border:1px solid rgba(184,145,47,.62);border-radius:50%;margin:auto;display:grid;place-items:center;position:relative;transform:rotate(-8deg)}
+    .seal::before,.seal::after{content:"";position:absolute;inset:12px;border:1px solid rgba(184,145,47,.34);border-radius:50%}
+    .seal::after{inset:25px;border-style:dotted;opacity:.6}
+    .seal-content{text-align:center;z-index:1}
+    .seal-mark{display:block;color:var(--gold);font:400 clamp(66px,9vw,112px)/1 var(--serif);letter-spacing:-.15em;padding-right:.14em}
+    .seal-label{display:block;margin-top:13px;color:var(--tin);font:600 10px/1.8 var(--sans);letter-spacing:.25em;text-transform:uppercase}
+    .band{background:var(--gold);color:var(--black);border-block:1px solid var(--dark-gold)}
+    .band-inner{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px;padding:16px 0;font:700 11px/1.5 var(--sans);letter-spacing:.14em;text-transform:uppercase}
+    .intro{padding:110px 0;background:var(--paper)}
+    .intro-grid{display:grid;grid-template-columns:235px 1fr;gap:75px}
+    .section-label{margin:0;color:var(--dark-gold);font:700 11px/1.6 var(--sans);letter-spacing:.18em;text-transform:uppercase}
+    .section-label span{display:block;margin-top:12px;width:60px;height:1px;background:var(--dark-gold)}
+    h2{font-size:clamp(36px,4.8vw,63px);letter-spacing:-.06em;line-height:1.2;margin-bottom:30px}
+    .intro p:not(.section-label){font-size:18px;line-height:1.95;max-width:750px}
+    .intro .muted{color:#625D52}
+    .principles{background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:96px 0 110px}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;border-bottom:1px solid var(--line);padding-bottom:34px;margin-bottom:0}
     .section-head h2{margin:16px 0 0}
-    .section-head p{max-width:360px;margin:0;color:var(--muted)}
-    .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
-    .card{padding:32px;min-height:315px;background:var(--white);border:1px solid var(--border);border-top:4px solid var(--blue);display:flex;flex-direction:column;transition:transform 200ms cubic-bezier(.4,0,.2,1),box-shadow 200ms}
-    .card:nth-child(2){border-top-color:var(--green)}.card:nth-child(3){border-top-color:var(--amber)}
-    .card:hover{transform:translateY(-4px);box-shadow:0 8px 16px -4px rgba(0,0,0,.14)}
-    .card .num{color:var(--muted);font:600 13px "JetBrains Mono",monospace}
-    .card h3{margin:auto 0 13px;font-size:25px;letter-spacing:-.035em;line-height:1.2;font-weight:800}
-    .card p{margin:0;color:#4B5563;font-size:15px;line-height:1.7}
-    .closing{padding:96px 0;background:var(--white)}
-    .closing-inner{display:grid;grid-template-columns:1.3fr 1fr;gap:72px;align-items:center}
-    .closing h2{max-width:640px;margin-bottom:0}
-    .closing p{font-size:18px;line-height:1.8;color:#4B5563;margin:0}
-    .footer{padding:28px 0;background:var(--ink);color:#9CA3AF;font-size:12px}
-    .footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}
-    .footer a{color:#E5E7EB;text-decoration:none}
-    .footer a:hover{text-decoration:underline}
-    @media(max-width:850px){
-      .hero-inner{grid-template-columns:1fr;min-height:unset;padding:80px 0 74px}
-      .hero-aside{max-width:360px}
-      .intro-grid{grid-template-columns:1fr;gap:27px}
+    .section-head p:last-child{max-width:330px;margin:0;color:#625D52;font-size:15px}
+    .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+    .card{border-right:1px solid var(--line);padding:43px 32px 18px 0;min-height:305px;display:flex;flex-direction:column}
+    .card+.card{padding-left:32px}
+    .card:last-child{border-right:0}
+    .card-number{font:700 12px/1 var(--sans);letter-spacing:.15em;color:var(--dark-gold)}
+    .card h3{font-size:clamp(23px,2.2vw,31px);letter-spacing:-.045em;line-height:1.3;margin:auto 0 14px}
+    .card p{margin:0;color:#625D52;font-size:15px;line-height:1.8}
+    .closing{padding:110px 0;background:var(--paper)}
+    .closing-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:70px;align-items:center}
+    .closing h2{margin:0}
+    .closing p{margin:0;border-left:2px solid var(--gold);padding-left:25px;color:#625D52;font-size:18px;line-height:1.9}
+    .footer{background:var(--black);color:var(--tin);border-top:4px solid var(--gold);padding:36px 0}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center;font:500 12px var(--sans)}
+    .footer a{color:var(--paper);text-decoration:none}.footer a:hover{color:var(--gold)}
+    @media(max-width:900px){
+      .hero-grid{grid-template-columns:1fr;gap:70px;min-height:auto}
+      .seal{width:230px}
+      .seal-mark{font-size:85px}
+      .intro-grid{grid-template-columns:1fr;gap:30px}
+      .closing-grid{grid-template-columns:1fr;gap:30px}
+    }
+    @media(max-width:650px){
+      .wrap{width:calc(100% - 36px)}
+      .masthead-inner{min-height:86px;gap:15px}
+      .nav{gap:16px}.nav a{font-size:10px}
+      .masthead-line .wrap{flex-wrap:wrap}
+      .hero-grid{padding:79px 0;gap:57px}
+      h1{font-size:clamp(45px,11.2vw,73px)}
+      .intro,.closing{padding:75px 0}
+      .principles{padding:72px 0}
+      .section-head{display:block}.section-head p:last-child{margin-top:20px}
       .cards{grid-template-columns:1fr}
-      .card{min-height:235px}
-      .closing-inner{grid-template-columns:1fr;gap:24px}
+      .card,.card+.card{padding:32px 0;min-height:205px;border-right:0;border-bottom:1px solid var(--line)}
+      .card:last-child{border-bottom:0}
+      .card h3{margin:24px 0 12px}
+      .footer-inner{flex-direction:column;align-items:flex-start}
     }
-    @media(max-width:640px){
-      .wrap{width:calc(100% - 32px)}
-      .nav{min-height:72px}
-      .brand{font-size:18px}
-      .brand .mark{margin-right:5px}
-      .nav-links{gap:14px}
-      .nav-links a{font-size:12px}
-      .nav-links .nav-cta{padding:8px 10px}
-      h1{font-size:clamp(50px,13vw,76px)}
-      .hero-inner{padding:68px 0 62px;gap:42px}
-      .intro,.closing{padding:72px 0}
-      .principles{padding:68px 0}
-      .section-head{align-items:start;flex-direction:column;gap:18px}
-      .ticker-inner{font-size:10px}
-      .footer-inner{align-items:start;flex-direction:column}
-    }
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   </style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-  <div class="topline" aria-hidden="true"></div>
-  <header class="site-header">
-    <div class="wrap nav">
-      <a class="brand" href="#top" aria-label="Archwise Ltd. — back to top"><span class="mark" aria-hidden="true">//</span>ARCHWISE<span class="ltd">LTD.</span></a>
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#about">About</a>
-        <a class="nav-cta" href="#standard">The standard</a>
-      </nav>
+  <div class="top-rule" aria-hidden="true"></div>
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <a href="#top" class="wordmark" aria-label="Archwise Ltd., back to top">Archwise Ltd.<small>Media &amp; publishing</small></a>
+      <nav class="nav" aria-label="Primary navigation"><a href="#about">About</a><a href="#standard">The standard</a></nav>
     </div>
+    <div class="masthead-line"><div class="wrap"><span>An independent point of view</span><span>Words · Music · Dark imagination</span></div></div>
   </header>
   <main id="main">
     <section class="hero" id="top" aria-labelledby="hero-title">
-      <div class="wrap hero-inner">
+      <div class="wrap hero-grid">
         <div>
-          <p class="eyebrow">Media / publishing · Archwise Ltd.</p>
-          <h1 id="hero-title">No filler.<br><span class="stroke">No apologies.</span></h1>
+          <p class="overline">Archwise Ltd. / The opening statement</p>
+          <h1 id="hero-title">No filler.<br><em>No apologies.</em></h1>
           <p class="hero-copy">Rock has never needed permission to be loud. Horror has never needed permission to be strange. Good publishing shouldn't need permission to have a point of view.</p>
         </div>
-        <aside class="hero-aside" aria-label="Our point of view">
-          <strong>Our wavelength</strong>
-          Heavy riffs. Dark fiction. Sharp words. Nothing polished smooth just to make it easier to ignore.
-        </aside>
+        <div class="seal" aria-hidden="true"><div class="seal-content"><span class="seal-mark">A</span><span class="seal-label">Archwise<br>Ltd.</span></div></div>
       </div>
     </section>
-    <div class="ticker" aria-label="Creative interests">
-      <div class="wrap ticker-inner"><span>Rock <span class="dot">/</span> Hard rock <span class="dot">/</span> Heavy metal</span><span>Dark stories <span class="dot">/</span> Distinct voices</span></div>
-    </div>
+    <div class="band"><div class="wrap band-inner"><span>Rock / Hard rock / Heavy metal</span><span>Dark stories / Distinct voices</span></div></div>
     <section class="intro" id="about" aria-labelledby="about-title">
       <div class="wrap intro-grid">
-        <p class="section-label">01 / The point</p>
+        <p class="section-label">01 / The point<span aria-hidden="true"></span></p>
         <div>
           <h2 id="about-title">Say something.<br>Mean it.</h2>
           <p>Archwise Ltd. sits at the intersection of media, publishing, and a taste for work with some teeth. The language should be as deliberate as the ideas behind it.</p>
-          <p class="subtext">We're not interested in corporate fog, borrowed swagger, or calling something fearless because somebody approved the adjective. The work has to speak for itself.</p>
+          <p class="muted">We're not interested in corporate fog, borrowed swagger, or calling something fearless because somebody approved the adjective. The work has to speak for itself.</p>
         </div>
       </div>
     </section>
@@ -147,34 +143,20 @@
           <p>Three rules for the way Archwise presents itself. No manifesto required.</p>
         </div>
         <div class="cards">
-          <article class="card">
-            <span class="num">01 — CLARITY</span>
-            <h3>Say the real thing.</h3>
-            <p>Specific words beat an impressive-sounding fog machine. Every time.</p>
-          </article>
-          <article class="card">
-            <span class="num">02 — CHARACTER</span>
-            <h3>Keep the teeth.</h3>
-            <p>A distinct voice isn't a defect. Don't sand it down until nobody recognizes it.</p>
-          </article>
-          <article class="card">
-            <span class="num">03 — SUBSTANCE</span>
-            <h3>Make it hold up.</h3>
-            <p>Details aren't decoration. They're where the work survives scrutiny—or doesn't.</p>
-          </article>
+          <article class="card"><span class="card-number">I / Clarity</span><h3>Say the real thing.</h3><p>Specific words beat an impressive-sounding fog machine. Every time.</p></article>
+          <article class="card"><span class="card-number">II / Character</span><h3>Keep the teeth.</h3><p>A distinct voice isn't a defect. Don't sand it down until nobody recognizes it.</p></article>
+          <article class="card"><span class="card-number">III / Substance</span><h3>Make it hold up.</h3><p>Details aren't decoration. They're where the work survives scrutiny—or doesn't.</p></article>
         </div>
       </div>
     </section>
     <section class="closing" aria-labelledby="closing-title">
-      <div class="wrap closing-inner">
+      <div class="wrap closing-grid">
         <h2 id="closing-title">Volume isn't the same thing as impact.</h2>
         <p>The idea is simple: make the words count, give the work a backbone, and never mistake noise for substance.</p>
       </div>
     </section>
   </main>
-  <footer class="footer">
-    <div class="wrap footer-inner"><span>© <span id="year">2026</span> Archwise Ltd. All rights reserved.</span><a href="#top">Back to top ↑</a></div>
-  </footer>
+  <footer class="footer"><div class="wrap footer-inner"><span>© <span id="year">2026</span> Archwise Ltd. All rights reserved.</span><a href="#top">Back to top ↑</a></div></footer>
   <script>document.getElementById("year").textContent=new Date().getFullYear();</script>
 </body>
 </html>
